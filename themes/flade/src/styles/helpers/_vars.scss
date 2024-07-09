@@ -1,0 +1,22 @@
+// Font families
+$font-family-primary: '', 'sans-serif';
+$font-family-second: '', 'sans-serif';
+
+// Colors
+$clr-bg: #fff;
+$clr-base: #000;
+$clr-primary: blue;
+$clr-second: yellow;
+$clr-action: red;
+
+// Sizes
+$html-font-size: 16px;
+
+// Paths
+$path-images: '../images'; // Path to src images from default entry points
+$path-images-inline: '../../images'; // Path to src images from inlined entry points
+$path-static-media: '../../static'; // Path to non-compiling images from default entry points
+$path-static-media-inline: '../../../static'; // Path to non-compiling images from inlined entry points
+// Example of use: background: url(#{$path-images}/image-name.jpg);
+
+$transition-default: .15s ease;

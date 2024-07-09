@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "flade/example-advanced",
+	"title": "Example Hero Block",
+	"icon": "superhero-alt",
+	"category": "layout",
+	"attributes": {
+		"promoImage": {
+			"type": "number",
+			"default": 0
+		},
+		"postTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"excerptText": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"multiple": false
+	},
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"script": "file:script.js",
+	"style": "file:style-index.css",
+	"viewScript": "file:front.js"
+}

@@ -1,0 +1,15 @@
+<phpunit bootstrap="bootstrap-test.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="Flade Test Suite">
+            <directory suffix="Test.php">themes/flade/tests</directory>
+            <exclude>themes/flade/tests/SimpleTest.php</exclude>
+            <exclude>themes/flade/tests/ExampleTest.php</exclude>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <exclude>
+            <group>skipped</group>
+        </exclude>
+    </groups>
+</phpunit>

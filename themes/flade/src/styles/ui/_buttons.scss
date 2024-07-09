@@ -1,0 +1,34 @@
+@import '../helpers';
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background: none;
+	border-radius: 0;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: normal;
+	text-decoration: none;
+	padding: 1em 2em;
+	transition: $transition-default;
+
+	// Remove underline on hover for any device
+	&:hover {
+		text-decoration: none;
+	}
+
+	&--main {
+		border: 1px solid var(--color-primary);
+		color: var(--color-primary);
+
+		@include mouseover {
+			background: var(--color-primary);
+			color: #fff;
+		}
+	}
+}

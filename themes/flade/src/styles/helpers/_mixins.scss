@@ -1,0 +1,27 @@
+@import 'vars';
+@import 'media-queries';
+
+// Theme settings for editor and frontend
+@mixin website_style_guide {
+	// Colors
+	--color-bg: #{$clr-bg};
+	--color-text: #{$clr-base};
+	--color-primary: #{$clr-primary};
+	--color-second: #{$clr-second};
+	--color-action: #{$clr-action};
+
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: $font-family-primary;
+	font-size: $html-font-size;
+	line-height: 1.25;
+}
+
+// Apply hover effects for supported devices only (prevent on touch screen)
+@mixin mouseover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}

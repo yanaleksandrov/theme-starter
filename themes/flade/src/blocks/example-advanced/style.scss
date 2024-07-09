@@ -1,0 +1,9 @@
+/**
+ * Block type frontend and editor styles definition.
+ * They will be enqueued both in the editor and when viewing the content on the front of the site.
+ * Note that these styles are loaded *before* editor styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+
+@import '../../styles/helpers/helpers-front-only';
+@import './block';

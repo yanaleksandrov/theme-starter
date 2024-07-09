@@ -1,0 +1,12 @@
+@import '../helpers';
+@import '../helpers/helpers-front-only';
+
+.footer {
+
+}
+
+@include sm-down {
+	.footer {
+
+	}
+}

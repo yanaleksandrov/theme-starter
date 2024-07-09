@@ -1,0 +1,38 @@
+@import './../../helpers';
+@import './confirm-tooltip';
+@import './controls';
+
+// Styles for content inside the editor area
+:where(.block-editor-writing-flow) {
+	@import './../../base/reset';
+	@import './../../base/fonts';
+
+	// Bring back the default styling
+	.acf-field .acf-input {
+		input,
+		textarea {
+			border-radius: 4px;
+			-webkit-appearance: revert;
+		}
+	}
+
+	// Lower the min-height of the WYSIWYG
+	.acf-field .acf-editor-wrap iframe {
+		min-height: 0;
+	}
+}
+
+.block-editor-writing-flow {
+	html & {
+		@include website_style_guide();
+	}
+
+	// Keep imports order, it's very important
+	@import './../../base/framework'; // imported twice, as we need it here with an extra specificity
+	@import './../../base/layout';
+	@import './../../ui';
+	@import './../../base/content';
+	//@import './../../components/swiper';
+
+	// Custom styles for editor should be placed here
+}

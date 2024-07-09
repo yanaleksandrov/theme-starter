@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "flade/example",
+	"title": "Example",
+	"icon": "universal-access-alt",
+	"category": "flade-blocks",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "Hello world"
+		}
+	},
+	"supports": {
+		"anchor": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"alignWide": true,
+		"customClassName": true,
+		"multiple": true
+	},
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"script": "file:script.js",
+	"style": "file:style.css",
+	"viewScript": "file:front.js"
+}

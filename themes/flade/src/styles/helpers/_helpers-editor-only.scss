@@ -1,0 +1,9 @@
+@import 'vars';
+
+// Keep px units without conversion to rem.
+//
+// @param {number} $size Number in pixels.
+// @param {number} $base-size HTML font-size.
+@function inRem($size, $base-size: $html-font-size) {
+	@return $size;
+}

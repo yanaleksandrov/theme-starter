@@ -1,0 +1,66 @@
+@import './../helpers';
+
+// Content elements styling. This file should be used for imports only
+
+p {
+	margin-block: 1em;
+	min-height: 1px;
+}
+
+a {
+	text-decoration: underline;
+}
+
+ul,
+ol {
+	list-style-position: inside;
+	margin-block: 1em;
+}
+
+/*
+// List with a custom counter
+ol {
+	display: table;
+	counter-reset: item;
+	list-style-type: none;
+
+	> li {
+		display: table-row;
+		counter-increment: item;
+
+		&:before {
+			content: counter(item) ". ";
+			display: table-cell;
+			//text-align: right; // uncomment if alignment is needed
+			white-space: nowrap;
+			padding-inline-end: .33em;
+		}
+	}
+}
+*/
+
+.wp-block-image {
+	margin-block: 1em;
+
+	figcaption {
+		font-size: .8em;
+	}
+}
+
+hr {
+	background: currentColor;
+	border: none;
+	height: 2px;
+	margin-block: 1em;
+	width: 100%;
+}
+
+blockquote {
+	color: inherit;
+	margin-block: 1em;
+}
+
+iframe {
+	display: block;
+	max-width: 100%;
+}

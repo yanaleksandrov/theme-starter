@@ -1,0 +1,27 @@
+// Styling content elements from the editor only
+
+// Styles with a 'zero' specificity (inside the :where selector)
+:where(.entry-content) {
+	@import 'content';
+}
+
+// Styles with an additional specificity (inside the .class selector)
+.entry-content {
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.wp-block-column {
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}

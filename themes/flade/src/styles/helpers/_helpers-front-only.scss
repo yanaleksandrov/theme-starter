@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+@import 'vars';
+
+// Round a number to a specific number of digits.
+//
+// @param {number} $value Number to round.
+// @param {number} $fraction-digits Number of digits to round to.
+@function round($value, $fraction-digits: 0) {
+	$power: math.pow(10, $fraction-digits);
+	@return math.div(math.round($power * $value), $power);
+}
+
+// Convert px unit to rem.
+//
+// @param {number} $size Number in pixels.
+// @param {number} $base-size HTML font-size.
+@function inRem($size, $base-size: $html-font-size) {
+	@return round(math.div($size, $base-size) * 1rem, 3);
+}

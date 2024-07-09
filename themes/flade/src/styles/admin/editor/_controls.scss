@@ -1,0 +1,18 @@
+// Styling custom label like a native
+.components-base-control__label {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 1.4;
+	margin-bottom: 8px;
+}
+
+// Fix for SVG sizes and responsive image component
+.components-responsive-wrapper {
+	min-height: 44px;
+
+	img {
+		max-height: 100%;
+	}
+}

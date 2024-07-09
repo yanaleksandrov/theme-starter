@@ -1,0 +1,83 @@
+@import '../helpers';
+
+.input {
+	display: block;
+	background: none;
+	border: 1px solid #000;
+	border-radius: 0;
+	outline: none;
+	color: #000;
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+	max-width: none;
+	min-width: 0;
+	height: 2em;
+	padding: 0 1em;
+	margin: 0;
+	transition: $transition-default;
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+
+	&::-webkit-input-placeholder {
+		color: inherit;
+		font-weight: inherit;
+		opacity: 1;
+		transition: .4s ease-in-out .4s;
+	}
+
+	&::-moz-placeholder {
+		color: inherit;
+		font-weight: inherit;
+		opacity: 1;
+		transition: .4s ease-in-out .4s;
+	}
+
+	&:focus {
+		&::-webkit-input-placeholder {
+			opacity: 0;
+		}
+
+		&::-moz-placeholder {
+			opacity: 0;
+		}
+	}
+
+	// Fix color switching on autocomplete
+	&:-webkit-autofill {
+		-webkit-text-fill-color: #fff;
+		//caret-color: currentColor; // Change caret color if needed by design
+	}
+
+	// Hack the background color switching
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		//filter: none; // Todo test in firefox
+		transition: background-color 999999s ease-in-out 0s;
+	}
+}
+
+.textarea {
+	min-height: 6em;
+	padding: .5em 1em;
+	resize: none;
+}
+
+input {
+	[type=number]::-webkit-inner-spin-button,
+	[type=number]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	[type=number] {
+		-moz-appearance: textfield;
+	}
+}

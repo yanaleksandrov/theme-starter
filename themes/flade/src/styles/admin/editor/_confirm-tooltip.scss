@@ -1,0 +1,75 @@
+.components-button.btn-image-remove {
+	display: block;
+	text-decoration: none;
+	margin-inline-start: auto;
+	margin-inline-end: 0;
+	margin-bottom: -16px;
+}
+
+.confirm-component {
+	position: relative;
+	pointer-events: none;
+
+	> * {
+		pointer-events: all;
+	}
+}
+
+.confirm-tooltip {
+	position: absolute;
+	background: #fff;
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, .5));
+	border-radius: 5px;
+	inset-block-start: 100%;
+	inset-inline-end: 0;
+	padding: 16px;
+	margin-top: 9px;
+	z-index: 11;
+
+	&:before {
+		position: absolute;
+		content: "";
+		border: 8px solid transparent;
+		border-bottom-color: #fff;
+		border-top-width: 0;
+		bottom: 100%;
+		inset-inline-end: 10px;
+	}
+}
+
+.confirm-header {
+	text-align: center;
+}
+
+.confirm-btns {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+// Confirm button is floating over the image container
+.confirm-container {
+	position: relative;
+
+	.editor-post-featured-image__toggle,
+	.editor-post-featured-image__preview {
+		border: 1px solid rgb(148, 148, 148);
+		min-height: 44px;
+	}
+
+	.confirm-component {
+		position: absolute;
+		inset-block-start: 5px;
+		inset-inline-end: 5px;
+	}
+
+	.confirm-btn-toggle {
+		background: rgba(255, 255, 255, 0.75);
+		margin: 0;
+
+		&:hover {
+			background: #fff;
+			box-shadow: none;
+		}
+	}
+}

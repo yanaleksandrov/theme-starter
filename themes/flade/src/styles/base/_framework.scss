@@ -1,0 +1,277 @@
+@import './../helpers';
+
+// Image wrappers for a proper media display
+.img-wrap,
+.img-center,
+.img-cover,
+.img-contain,
+.img-scale-down {
+	display: block;
+}
+
+.img-wrap,
+.img-center,
+.img-middle {
+	img,
+	svg {
+		display: block;
+		flex-shrink: 0;
+		width: auto;
+		height: auto;
+		max-height: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+}
+
+// Center image horizontally
+.img-center {
+	img,
+	svg {
+		margin: 0 auto;
+	}
+}
+
+// Center image horizontally and vertically
+.img-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Image wrappers that should fit the image inside. Height must be specified additionally (px, aspect-ratio, etc.)
+.img-cover,
+.img-contain,
+.img-scale-down {
+	img,
+	svg {
+		display: block;
+		object-fit: cover;
+		object-position: center;
+		width: 100%;
+		max-width: none;
+		height: 100%;
+		max-height: none;
+		aspect-ratio: inherit;
+	}
+}
+
+.img-contain {
+	img,
+	svg {
+		object-fit: contain;
+	}
+}
+
+.img-scale-down {
+	img,
+	svg {
+		object-fit: scale-down;
+	}
+}
+
+// Default class for WP image output with a function flade_the_image()
+.img-autosize {
+	width: auto;
+	height: auto;
+}
+
+// Wrapper for the image, that should be like a block background
+.img-bg-cover {
+	position: relative;
+	display: block;
+	z-index: 2;
+
+	> img {
+		position: absolute;
+		display: block;
+		object-fit: cover;
+		object-position: center;
+		inset: 0;
+		max-width: none;
+		max-height: none;
+		z-index: -1;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.flex {
+	display: flex;
+}
+
+.iflex {
+	display: inline-flex;
+}
+
+.fdc {
+	flex-direction: column;
+}
+
+.asfs {
+	align-self: flex-start;
+}
+
+.aic {
+	align-items: center;
+}
+
+.aib {
+	align-items: baseline;
+}
+
+.aifs {
+	align-items: flex-start;
+}
+
+.aife {
+	align-items: flex-end;
+}
+
+.jcc {
+	justify-content: center;
+}
+
+.jcspb {
+	justify-content: space-between;
+}
+
+.jcfe {
+	justify-content: flex-end;
+}
+
+.fwrap {
+	flex-wrap: wrap;
+}
+
+.ff-second {
+	font-family: $font-family-second;
+}
+
+.sr-only {
+	border: none;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-start {
+	text-align: start;
+}
+
+.text-end {
+	text-align: end;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+// Add or remove font-weight classes according to theme design
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.fw-600 {
+	font-weight: 600;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+.fw-800 {
+	font-weight: 800;
+}
+
+.fw-900 {
+	font-weight: 900;
+}
+
+.clr-main {
+	color: var(--color-primary);
+}
+
+.clr-second {
+	color: var(--color-second);
+}
+
+@include xs-up {
+	.hide-xs-up {
+		display: none !important;
+	}
+}
+
+@include sm-up {
+	.hide-sm-up {
+		display: none !important;
+	}
+}
+
+// WordPress has it's own breakpoints for default WP blocks responsive
+@media screen and (min-width: 782px) {
+	.hide-wp-mob-up {
+		display: none !important;
+	}
+}
+
+@include md-up {
+	.hide-md-up {
+		display: none !important;
+	}
+}
+
+@include lg-up {
+	.hide-lg-up {
+		display: none !important;
+	}
+}
+
+@include lg-down {
+	.hide-lg-down {
+		display: none !important;
+	}
+}
+
+@include md-down {
+	.hide-md-down {
+		display: none !important;
+	}
+}
+
+// WordPress has it's own breakpoints for default WP blocks responsive
+@media screen and (max-width: 781px) {
+	.hide-wp-mob-down {
+		display: none !important;
+	}
+}
+
+@include sm-down {
+	.hide-sm-down {
+		display: none !important;
+	}
+}
+
+@include xs-down {
+	.hide-xs-down {
+		display: none !important;
+	}
+}

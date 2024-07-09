@@ -1,0 +1,28 @@
+/**
+ * Block styles definition.
+ * Imported to "editor.scss" and "style.scss".
+ */
+
+@import './../../styles/helpers';
+
+.example-hero {
+	&__promo {
+		width: clamp(160px, 600px, 30vw);
+		margin-inline: auto;
+	}
+
+	&__title {
+		font-size: clamp(20px, 4vw, 60px);
+		margin-block: .5em 0;
+	}
+
+	&__date {
+		font-weight: 300;
+		margin-block: 1em;
+	}
+
+	&__excerpt {
+		font-size: inRem(40px);
+		margin-top: 1em;
+	}
+}

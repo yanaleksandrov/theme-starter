@@ -1,0 +1,177 @@
+// Replace default icon in the admin menu with our custom
+#toplevel_page_flade-settings .wp-menu-image:before {
+	// Remove dash-icon
+	content: '';
+
+	// Only -webkit-mask gives us the ability to apply a dynamic color to an SVG as a background
+	-webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 31.9 32' width='20' height='20'><g transform='translate(-5604.053 -2293.441)'><g><rect x='5611.2' y='2314.4' width='4.4' height='4.4'/><rect x='5604.1' y='2307.3' width='4.4' height='4.4'/><rect x='5611.2' y='2300.1' width='4.4' height='4.4'/></g><path d='M5619.9,2325.4c-1.2,0-2.2-1-2.2-2.2c0-0.6,0.2-1.1,0.6-1.6l12.2-12.2l-12.2-12.2 c-0.9-0.9-0.9-2.3,0-3.1s2.3-0.9,3.1,0l13.9,13.9c0.8,0.8,0.8,2.1,0,2.9l-13.9,13.9C5621.1,2325.2,5620.5,2325.4,5619.9,2325.4z'/></g></svg>") no-repeat center left;
+
+	background-color: currentColor;
+	background-size: 20px 20px;
+}
+
+// "Find Posts" subpage
+.flade-find-posts {
+
+	&__actions {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
+		max-width: 100%;
+
+		legend {
+			font-size: 14px;
+		}
+	}
+
+	&__settings {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		max-width: 100%;
+	}
+
+	&__searchbar {
+		display: flex;
+		align-items: flex-start;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		gap: 10px 5px;
+		max-width: 100%;
+	}
+
+	&__fieldset {
+		display: flex;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		border: 1px solid #c3c4c7;
+		gap: 1em 2em;
+		padding: 10px;
+	}
+
+	&__label {
+		display: inline-flex;
+		align-items: center;
+		font-size: 14px;
+	}
+
+	&__results {
+		overflow: auto;
+		margin-top: 1em;
+
+		table {
+			min-width: 900px;
+		}
+
+		:is(td, th) {
+			box-sizing: border-box;
+
+			&:first-child {
+				white-space: nowrap;
+				width: 80px;
+			}
+
+			&:nth-child(2) {
+				width: 110px;
+			}
+
+			&:nth-child(3),
+			&:nth-child(4) {
+				width: 140px;
+			}
+
+			&:nth-child(5) {
+				width: 110px;
+			}
+		}
+
+		a {
+			// Fix default WP styles
+			&:focus:not(:focus-visible) {
+				box-shadow: none;
+				outline: none;
+			}
+		}
+	}
+
+	&__tbody {
+		position: relative;
+
+		&:before,
+		&:after {
+			position: absolute;
+			inset: 0;
+			display: block;
+			content: '';
+			transition: 0.15s ease-in-out;
+		}
+
+		&:before {
+			z-index: 3;
+			background: rgba(255, 255, 255, 0.5);
+		}
+
+		&:after {
+			z-index: 4;
+			width: 30px;
+			height: 30px;
+			margin: auto;
+
+			box-sizing: border-box;
+			border: 4px solid;
+			border-color: currentColor transparent currentColor transparent;
+			border-radius: 50%;
+			animation: loadingSpin 1.2s linear infinite;
+		}
+
+		&:not(.loading) {
+			&:before,
+			&:after {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			&:after {
+				transition: none;
+			}
+		}
+	}
+
+	// Duplicate WP styles but get rid of "focus" state
+	th.desc:not(.sorted):hover span.sorting-indicator:before,
+	th.sorted.asc .sorting-indicator:before {
+		content: "\f142";
+	}
+
+	th.asc:not(.sorted):hover span.sorting-indicator:before,
+	th.sorted.desc .sorting-indicator:before {
+		content: "\f140";
+	}
+
+	.tablenav-pages {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.33em;
+
+		.displaying-num {
+			padding: 0;
+		}
+	}
+
+	.pagination-links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 3px;
+	}
+}
+
+@keyframes loadingSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}

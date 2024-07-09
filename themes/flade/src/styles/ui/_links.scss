@@ -1,0 +1,20 @@
+@import '../helpers';
+
+a {
+	transition: $transition-default;
+
+	& > img {
+		transition: $transition-default;
+	}
+
+	@include mouseover {
+		> img {
+			opacity: .85;
+		}
+	}
+}
+
+// Fix anchors - prevent event capturing
+a[href^="#"] * {
+	pointer-events: none;
+}
