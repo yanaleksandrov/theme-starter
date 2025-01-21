@@ -187,5 +187,5 @@ With the following options, it will help improve pagespeed even further:
 - Generate a new template for a test
   - `composer generate-test TestName`
 - How to run a test
-  - For example we have a test with the name TrimStringTest which is located in tests\TrimStringTest.php. We just need to run this command in a command line: ` ./vendor/bin/phpunit themes/flade/tests/TrimStringTest.php
+  - For example, we have a test with the name TrimStringTest which is located in tests\TrimStringTest.php. We just need to run this command in a command line: ` ./vendor/bin/phpunit themes/flade/tests/TrimStringTest.php
     `
